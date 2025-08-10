@@ -1,6 +1,6 @@
+import { Goal, MinusCircle, Plus, PlusCircle } from "lucide-react-native";
 import { useState } from "react";
-import { View, TouchableOpacity, Animated } from "react-native";
-import { Plus, PlusCircle, MinusCircle, Goal } from "lucide-react-native";
+import { Animated, TouchableOpacity, View } from "react-native";
 
 export default function FloatingActionButton({
   onAddIncome,
@@ -54,17 +54,17 @@ export default function FloatingActionButton({
 
   const incomeTranslateY = animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, -30],
+    outputRange: [0, 0],
   });
 
   const expenseTranslateY = animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, -40],
+    outputRange: [0, 0],
   });
 
   const goalTranslateY = animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, -40],
+    outputRange: [0, 0],
   });
 
   const optionScale = animation.interpolate({
@@ -115,11 +115,8 @@ export default function FloatingActionButton({
             onPress={() => handleOptionPress("goal")}
             className="bg-indigo-500 dark:bg-indigo-600 rounded-full p-3 shadow-lg flex-row items-center"
             style={{
-              minWidth: 56,
-              minHeight: 56,
               elevation: 8,
               shadowColor: "#000",
-              shadowOffset: { width: 0, height: 4 },
               shadowOpacity: 0.3,
               shadowRadius: 8,
             }}
@@ -141,11 +138,8 @@ export default function FloatingActionButton({
             onPress={() => handleOptionPress("expense")}
             className="bg-red-500 dark:bg-red-600 rounded-full p-3 shadow-lg flex-row items-center"
             style={{
-              minWidth: 56,
-              minHeight: 56,
               elevation: 8,
               shadowColor: "#000",
-              shadowOffset: { width: 0, height: 4 },
               shadowOpacity: 0.3,
               shadowRadius: 8,
             }}
@@ -167,11 +161,8 @@ export default function FloatingActionButton({
             onPress={() => handleOptionPress("income")}
             className="bg-green-500 dark:bg-green-600 rounded-full p-3 shadow-lg flex-row items-center"
             style={{
-              minWidth: 56,
-              minHeight: 56,
               elevation: 8,
               shadowColor: "#000",
-              shadowOffset: { width: 0, height: 4 },
               shadowOpacity: 0.3,
               shadowRadius: 8,
             }}
@@ -191,7 +182,6 @@ export default function FloatingActionButton({
             alignItems: "center",
             elevation: 8,
             shadowColor: "#000",
-            shadowOffset: { width: 0, height: 4 },
             shadowOpacity: 0.3,
             shadowRadius: 8,
           }}
